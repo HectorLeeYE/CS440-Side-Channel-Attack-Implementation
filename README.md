@@ -13,8 +13,11 @@ Ideas:
 2. `pip3 install -r requirements.txt` -> Please dont pipx, that's a system wide installation
 
 
-## News Articles
+## News Articles/Resources
 [Lucky 13 TLS CBC Attack](https://en.wikipedia.org/wiki/Lucky_Thirteen_attack)
+https://github.com/phonchi/awesome-side-channel-attack
+
+
 
 ### PR
 1. Please fund my [OSEP](https://www.offsec.com/courses/pen-300/)
