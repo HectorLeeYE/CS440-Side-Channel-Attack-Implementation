@@ -17,6 +17,9 @@ Ideas:
 [Lucky 13 TLS CBC Attack](https://en.wikipedia.org/wiki/Lucky_Thirteen_attack)
 https://github.com/phonchi/awesome-side-channel-attack
 
+[Possible Implementation of weak JWT](https://security.snyk.io/vuln/SNYK-GOLANG-GITHUBCOMROBBERT229JWT-50051)
+
+
 
 
 ### PR

