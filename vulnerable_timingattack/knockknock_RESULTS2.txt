@@ -1,9 +1,0 @@
-Current Guess: A, Response Time:0.4036931040009222 
-Current Guess: Pa, Response Time:0.0036064279993297532 
-Current Guess: Pas, Response Time:0.0032790519999252865 
-Current Guess: Pass, Response Time:0.0030123579999781214 
-Current Guess: Passw, Response Time:0.0037296070004231296 
-Current Guess: Passwo, Response Time:0.0034673539994400926 
-Current Guess: Passwor, Response Time:0.00286507700002403 
-Current Guess: Password, Response Time:0.0029480020002665697 
-Current Guess: Password1, Response Time:0.0048743290008133044 
