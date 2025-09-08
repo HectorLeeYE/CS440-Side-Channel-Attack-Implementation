@@ -20,8 +20,3 @@ https://github.com/phonchi/awesome-side-channel-attack
 [Possible Implementation of weak JWT](https://security.snyk.io/vuln/SNYK-GOLANG-GITHUBCOMROBBERT229JWT-50051)
 
 
-
-
-### PR
-1. Please fund my [OSEP](https://www.offsec.com/courses/pen-300/)
-2. Please buy me [Chisato's Outfit](https://www.cospa.com/cospatio/detail/id/00000115521)
