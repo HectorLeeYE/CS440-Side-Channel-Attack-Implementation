@@ -7,6 +7,10 @@ Ideas:
 2. Hashing Side Channel
 3. Web Timing Attack on Different Endpoints
 
+## Changelog
+080925: Idea 3 is done -> server.py is in vulnerable_timingattack, and execute c4.py to detonate
+Note that vulnerable_soundCPU can only be simulated, but the rainbow + lascar repo makes it seem possible 
+
 ## Implementation instructions for POC
 1. Create a python virtual environment - Unless you don't mind messing up your local filesystem with varying package versions. Plus I installed a bunch of random packages to make things work, especially with the frontend display since i especially suck at (and also dont understand) react/jsx, and didnt clean up
 2. Check it's using your virtual env python with `which python` and it should point to the virtual environment bin/python
