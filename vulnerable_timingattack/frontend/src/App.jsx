@@ -50,7 +50,6 @@ function App() {
           }
         }
         catch (error) {
-          console.error("Login Failed: ", error)
           Swal.fire({
             icon: "error",
             title: "Wrong",

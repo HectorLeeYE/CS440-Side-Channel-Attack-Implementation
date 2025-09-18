@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Landing from './landing.jsx';
+import Landing from './Landing.jsx';
 
 createRoot(document.getElementById('root')).render(
     <Router>

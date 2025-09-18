@@ -1,4 +1,4 @@
-import dancingCat from "../../static/good-morning.gif";
+import dancingCat from "../static/good-morning.gif";
 
 function Landing() {
   return (
