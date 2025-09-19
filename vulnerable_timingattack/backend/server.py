@@ -4,8 +4,7 @@ import time
 
 app = Flask(__name__)
 CORS(app)
-topsecretpassword = "BCDEA"       #Global variable for password- No time to implement putting variables inside requests and dealing with .html frontend
-                                    ## The only special chars are ! @
+topsecretpassword = "PLSGIVEUSAPLUS"
 
 @app.route("/timingAttack", methods=['POST'])
 def testing_timingAttack():
@@ -14,15 +13,14 @@ def testing_timingAttack():
     """
     # First, grab details from login.html
     if request.method == "POST":
-        print(request)
-        entered_password = request.json['password'][0]
-        print('Current Password: ', entered_password)
+        grabbed_request = request.get_json()
+        entered_password = grabbed_request.get("password")
 
         # Next, compare with stored password to return false
         for i in range(min(len(entered_password), len(topsecretpassword))):
             if entered_password[i] != topsecretpassword[i]:
                 # Wrong Password returned immediately since a char doesnt match
-                time.sleep(0.3)                                #NOTE: THIS IS A MASSIVE CHEAT AS ITS ARTIFICIAL!     
+                time.sleep(0.01)                                #NOTE: THIS IS A MASSIVE CHEAT AS ITS ARTIFICIAL!     
                 #return redirect(url_for("failure"))
                 return jsonify({
                     "Message":"Password Wrong"
@@ -32,11 +30,11 @@ def testing_timingAttack():
             return jsonify({
                "Message":"Password Wrong"
             }), 401
-            
-        # Reached the end, so its correct password
-        return jsonify({
-            "Message":"Correct"
-        }), 200
+        else:
+            # Reached the end, so its correct password
+            return jsonify({
+                "Message":"Correct"
+            }), 200
 
 if __name__=="__main__":
     print('Current Password: ', topsecretpassword)
