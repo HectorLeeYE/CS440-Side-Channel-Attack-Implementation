@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
+import angryCat from '../static/angry-cat-stare.gif'
 
 function App() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ function App() {
         <input id="swal-input1" class="swal2-input" type="password" placeholder="Password">
       `,
       focusConfirm: false,
+      confirmButtonColor: "#98fb98",
 
       preConfirm: () => {
         const el = document.getElementById("swal-input1");
@@ -68,7 +70,11 @@ function App() {
     <div>
       <h1>CS440 Project</h1>
       <p>Group Number: (TODO: insert group number here)</p>
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin} style={{ backgroundColor: "#98fb98", border: "none", padding: "8px 16px", borderRadius: "6px" }}>
+        Login
+      </button>
+      <br></br>
+      <img src={angryCat} alt="Angry Cat" />
     </div>
   );
 }
