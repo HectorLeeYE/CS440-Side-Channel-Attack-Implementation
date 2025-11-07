@@ -20,7 +20,7 @@ def testing_timingAttack():
         for i in range(min(len(entered_password), len(topsecretpassword))):
             if entered_password[i] != topsecretpassword[i]:
                 # Wrong Password returned immediately since a char doesnt match
-                time.sleep(0.01)                                #NOTE: THIS IS A MASSIVE CHEAT AS ITS ARTIFICIAL!     
+                time.sleep(0.01)
                 #return redirect(url_for("failure"))
                 return jsonify({
                     "Message":"Password Wrong"

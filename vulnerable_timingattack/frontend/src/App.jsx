@@ -69,7 +69,7 @@ function App() {
   return (
     <div>
       <h1>CS440 Project</h1>
-      <p>Group Number: (TODO: insert group number here)</p>
+      <p>Group Number: 9</p>
       <button onClick={handleLogin} style={{ backgroundColor: "#98fb98", border: "none", padding: "8px 16px", borderRadius: "6px" }}>
         Login
       </button>
